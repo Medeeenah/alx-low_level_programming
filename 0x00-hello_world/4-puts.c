@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - prints texts with put
  *   
@@ -12,3 +11,4 @@ int main(void)
     puts(text);
     return (0);
 }
+
