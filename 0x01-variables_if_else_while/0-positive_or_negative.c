@@ -1,8 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
+#include <stdio.h>
 
-/* betty style doc for function main goes there */
+/**
+ * main - print sign of random number
+ *
+ * Return: 0 to exit program
+ */
 int main(void)
 {
 	int n;
@@ -11,7 +15,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	if(n > 0)
 		printf("%d is positive\n", n);
-	elseif(n == 0)
+	else if(n == 0)
 		printf("%d is zero\n", n);
 	else
 		printf("%d is negative\n", n);
