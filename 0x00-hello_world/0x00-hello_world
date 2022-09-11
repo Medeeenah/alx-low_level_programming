@@ -1,0 +1,6 @@
+
+Command 'gcc' not found, but can be installed with:
+
+apt install gcc
+
+sudo: gcc: command not found
