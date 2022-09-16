@@ -10,7 +10,7 @@ void print_square(int size)
 {
 	int rows = size;
 	int orSize = size;
-
+	
 	if (size > 0)
 	{
 		while (size--)
@@ -23,4 +23,6 @@ void print_square(int size)
 			rows = orSize;
 		}
 	}
+	else
+		_putchar(10);
 }
