@@ -1,17 +1,15 @@
+#include "main.h"
+
 /**
- * _abs- removes sign of number
- * @i: number to remove sign
- *
- * Return: absolute value of number
+ * _abs - computes the absolute value of an integer
+ * @n: the int to check
+ * Return: the absolute value of int
  */
-int _abs(int i)
+int _abs(int n)
 {
-	if (i < 0)
+	if (n >= 0)
 	{
-		return (0 - i);
+		return (n);
 	}
-	else
-	{
-		return (i);
-	}
+	return (-n);
 }

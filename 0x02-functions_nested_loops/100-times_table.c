@@ -46,4 +46,5 @@ void print_times_table(int n)
 				{
 				_putchar(mul / 10 + '0');
 				_putchar(mul % 10 + '0'); }}}
-		_putchar('\n'); }}}
+		_putchar('\n'); }}
+}
