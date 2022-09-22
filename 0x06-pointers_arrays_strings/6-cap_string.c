@@ -1,40 +1,34 @@
+#include "main.h"
+
 /**
- * cap_string - Capitalizes words in a string
- * @s: string to capitalize
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
  *
- * Return: pointer to capitalized string
+ * Return: the resulting string
  */
 char *cap_string(char *s)
 {
-	int i = 0;
-	int c;
-	char sep[] = "\n \t,;.!\"(){}";
+	int i, j;
 
-	while (*(s + i))
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (i == 0)
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
+
+		for (j = 0; j < 13; j++)
 		{
-			if (*(s + i) >= 'a' && *(s + i) <= 'z')
-				*(s + i) -= 32;
-		}
-		for (c = 0; *(sep + c); c++)
-		{
-		if (*(sep + c) == *(s + i))
-		{
-			i++;
-			if ((*(s + i) >= 'a') && (*(s + i) <= 'z'))
-				*(s + i) -= 32;
-			else if ((*(s + i) >= 'A') && (*(s + i) <= 'Z'))
-				continue;
-			else
+			if (s[i] == spe[j])
 			{
-				i++;
-				if ((*(s + i) >= 'a') && (*(s + i) <= 'z'))
-					*(s + i) -= 32;
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				{
+					s[i + 1] -= 32;
+				}
 			}
 		}
-		}
-		i++;
 	}
+	
 	return (s);
 }

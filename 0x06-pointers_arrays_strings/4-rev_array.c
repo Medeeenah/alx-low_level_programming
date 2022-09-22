@@ -1,27 +1,20 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * reverse_array - reverse content of array of int
- * @a: pointer to array
- * @n: number of elements in array
- *
- * Return: void
+ * reverse_array - reverses an array of integers
+ * @a: array to be reversed
+ * @n: number of elements in the array
  */
 void reverse_array(int *a, int n)
 {
-	int end = n - 1;
-	int i = 0;
-	int rev_arr[sizeof(a)];
+	int i, j, tmp;
 
-	printf("rev_arr size = %lu. ", sizeof(rev_arr));
-	while (end >= 0)
+	j = n - 1;
+
+	for (i = 0; i < n / 2; i++)
 	{
-		*(rev_arr + i) = a[end];
-		i++;
-		end--;
-	}
-	for (i = 0; i < n; i++)
-	{
-		*(a + i) = *(rev_arr + i);
+		tmp = a[i];
+		a[i] = a[j];
+		a[j--] = tmp;
 	}
 }

@@ -1,26 +1,28 @@
+#include "main.h"
+
 /**
- * leet - encodes string into 1337
- * @s: string to encode
+ * leet - encodes a string in 1337
+ * @s: string to be encoded
  *
- * Return: pointer to string
+ * Return: the resulting string;
  */
 char *leet(char *s)
 {
-	char dict_w[] = "AaEeOoTtLl";
-	char dict_n[] = "4433007711";
-	int l;
-	int c = 0;
+	int i, j;
 
-	while (*(s + c) != '\0')
+	char *a = "aAeEoOtTlL";
+	char *b = "4433007711";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (l = 0; *(dict_w + l) != '\0'; l++)
+		for (j = 0; j < 10; j++)
 		{
-			if (*(dict_w + l) == *(s + c))
+			if (s[i] == a[j])
 			{
-				*(s + c) = *(dict_n + l);
+				s[i] = b[j];
 			}
 		}
-		c++;
 	}
+	
 	return (s);
 }

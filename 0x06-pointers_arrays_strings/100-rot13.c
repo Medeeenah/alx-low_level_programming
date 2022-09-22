@@ -1,26 +1,29 @@
+#include "main.h"
+
 /**
- * rot13 - encode string with rot13
- * @s: string to encode
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
  *
- * Return: pointer to string
+ * Return: the resulting string
  */
 char *rot13(char *s)
 {
-	char dict[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int r;
-	int c;
+	int i, j;
 
-	for (c = 0; *(s + c) != '\0'; c++)
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (r = 0; *(dict + r) != '\0'; r++)
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			if (*(dict + r) == *(s + c))
+			if (s[i] == a[j])
 			{
-				*(s + c) = *(rot + r);
+				s[i] = b[j];
 				break;
 			}
 		}
 	}
+	
 	return (s);
 }

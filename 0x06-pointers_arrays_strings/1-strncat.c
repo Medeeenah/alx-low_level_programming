@@ -1,45 +1,31 @@
+#include "main.h"
+
 /**
- * _strncat - concatenates n bytes of a string to another string
- * @dest: pointer to string to merge into
- * @src: pointer to string to be merged
- * @n: n bytes of src to merge
+ * _strncat - concatenates n bytes from a string to another
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes of str to concatenate
  *
- * Return: pointer to dest
+ * Return: a pointer to the resulting string dest
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i = 0;
-	int c = 0;
+	int i, j;
 
-	while (*(dest + i))
-		i++;
-	while (c < n && *(src + c))
-	{
-		*(dest + i) = *(src + c);
-		i++;
-		c++;
-	}
-	return (dest);
-}/**
- * _strncat - concatenates n bytes of a string to another string
- * @dest: pointer to string to merge into
- * @src: pointer to string to be merged
- * @n: n bytes of src to merge
- *
- * Return: pointer to dest
- */
-char *_strncat(char *dest, char *src, int n)
-{
-	int i = 0;
-	int c = 0;
+	i = 0;
+	j = 0;
 
-	while (*(dest + i))
+	while (dest[i] != '\0')
 		i++;
-	while (c < n && *(src + c))
+
+	while (src[j] != '\0' && j < n)
 	{
-		*(dest + i) = *(src + c);
+		dest[i] = src[j];
 		i++;
-		c++;
+		j++;
 	}
+
+	dest[i] = '\0';
+	
 	return (dest);
 }
