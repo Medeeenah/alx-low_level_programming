@@ -7,7 +7,7 @@
  *
  * Return: number of characters printed
  */
-size_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int myfile, i, check;
 	ssize_t count;
