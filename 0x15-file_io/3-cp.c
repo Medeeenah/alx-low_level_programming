@@ -62,5 +62,7 @@ int main(int argc, char **argv)
 	if (check == -1)
 	{
 		dprintf(1, "Error: Can't close fd %d\n", file1);
-		exit(100); }
-	return (0); }
+		exit(100);
+	}
+	return (0);
+}
